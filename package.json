@@ -1,0 +1,67 @@
+{
+  "name": "react-components",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "5.11.5",
+    "@testing-library/react": "11.1.1",
+    "@testing-library/user-event": "12.2.0",
+    "flatpickr": "4.6.6",
+    "fuzzysort": "1.1.4",
+    "lodash": "4.17.20",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.0",
+    "tippy.js": "6.2.7",
+    "web-vitals": "0.2.4"
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.3",
+    "@storybook/addon-actions": "6.0.28",
+    "@storybook/addon-backgrounds": "6.0.28",
+    "@storybook/addon-controls": "6.0.28",
+    "@storybook/addon-docs": "6.0.28",
+    "@storybook/addon-links": "6.0.28",
+    "@storybook/addon-viewport": "6.0.28",
+    "@storybook/node-logger": "6.0.28",
+    "@storybook/preset-create-react-app": "3.1.5",
+    "@storybook/react": "6.0.28",
+    "babel-loader": "8.1.0",
+    "eslint": "7.11.0",
+    "eslint-config-prettier": "6.13.0",
+    "eslint-config-standard": "14.1.1",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-simple-import-sort": "5.0.3",
+    "eslint-plugin-standard": "4.0.1",
+    "husky": "4.3.0",
+    "lint-staged": "10.4.2",
+    "prettier": "2.1.2",
+    "rimraf": "3.0.2",
+    "react-is": "17.0.1",
+    "tailwindcss": "1.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public --no-dll",
+    "build-storybook": "build-storybook -s public --no-dll"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,vue}": "eslint --cache --fix",
+    "*.{css,js,vue}": "prettier --write"
+  }
+}
