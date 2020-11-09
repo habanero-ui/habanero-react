@@ -1,13 +1,13 @@
 // import GlobalStyles from '../src/components/GlobalStyles/index'
 import map from 'lodash/map'
-import tailwindConfig from '../tailwind.config'
+import theme from '../src/themes/light'
 import './index.css'
 
 export const parameters = {
   backgrounds: {
-    values: map(Object.keys(tailwindConfig.theme.extend.colors), (name) => ({
+    values: map(Object.keys(theme.colors), (name) => ({
       name,
-      value: tailwindConfig.theme.extend.colors[name],
+      value: theme.colors[name],
     })),
   },
   layout: 'centered',

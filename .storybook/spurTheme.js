@@ -1,19 +1,19 @@
 import { create } from '@storybook/theming/create'
-import tailwindConfig from '../tailwind.config'
+import theme from '../src/themes/light'
 
 export default create({
   base: 'light',
-  appBg: tailwindConfig.theme.extend.colors.offwhite,
+  appBg: theme.colors.offwhite,
   appContentBg: 'white',
-  appBorderColor: tailwindConfig.theme.extend.colors.border,
+  appBorderColor: theme.colors.border,
   appBorderRadius: 4,
-  barBg: tailwindConfig.theme.extend.colors.offwhite,
-  barSelectedColor: tailwindConfig.theme.extend.colors.info,
-  colorPrimary: tailwindConfig.theme.extend.colors.info,
-  colorSecondary: tailwindConfig.theme.extend.colors.info,
+  barBg: theme.colors.offwhite,
+  barSelectedColor: theme.colors.info,
+  colorPrimary: theme.colors.info,
+  colorSecondary: theme.colors.info,
   fontBase: '"Inter", sans-serif',
   fontCode: 'monospace',
-  inputTextColor: tailwindConfig.theme.extend.colors.black,
-  textColor: tailwindConfig.theme.extend.colors.black,
+  inputTextColor: theme.colors.black,
+  textColor: theme.colors.black,
   textInverseColor: 'white',
 })

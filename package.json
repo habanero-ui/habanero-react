@@ -6,12 +6,15 @@
     "@testing-library/jest-dom": "5.11.5",
     "@testing-library/react": "11.1.1",
     "@testing-library/user-event": "12.2.0",
+    "classnames": "2.2.6",
     "flatpickr": "4.6.6",
     "fuzzysort": "1.1.4",
     "lodash": "4.17.20",
+    "prop-types": "15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
+    "styled-components": "5.2.1",
     "tippy.js": "6.2.7",
     "web-vitals": "0.2.4"
   },
@@ -39,17 +42,14 @@
     "husky": "4.3.0",
     "lint-staged": "10.4.2",
     "prettier": "2.1.2",
-    "rimraf": "3.0.2",
     "react-is": "17.0.1",
-    "tailwindcss": "1.9.5"
+    "rimraf": "3.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public --no-dll",
-    "build-storybook": "build-storybook -s public --no-dll"
+    "build-storybook": "build-storybook -s public --no-dll",
+    "lint": "eslint --cache --fix src/**/*.{js,jsx} && prettier --write src/**/*.{js,jsx}",
+    "start": "start-storybook -p 6006 -s public --no-dll"
   },
   "browserslist": [
     "> 1%",
@@ -61,7 +61,6 @@
     }
   },
   "lint-staged": {
-    "*.{js,vue}": "eslint --cache --fix",
-    "*.{css,js,vue}": "prettier --write"
+    "*.{js,jsx}": "eslint --cache --fix"
   }
 }
