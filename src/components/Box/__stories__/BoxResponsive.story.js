@@ -1,7 +1,6 @@
 import React from 'react'
 
 import useScreenSizeType from '../../../helpers/useScreenSizeType'
-import Text from '../../Text'
 import Box from '../index'
 
 const Template = (args) => {
@@ -9,7 +8,7 @@ const Template = (args) => {
 
   return (
     <Box {...args} padding={['xsmall', 'gutter', 'xlarge']}>
-      <Text>Screen Size Type: {screenSizeType}</Text>
+      Screen Size Type: {screenSizeType}
     </Box>
   )
 }
