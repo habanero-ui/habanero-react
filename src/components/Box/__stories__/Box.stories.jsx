@@ -3,6 +3,7 @@ import colors from '../../../constants/colors'
 import spacingAliases from '../../../constants/spacingAliases'
 import Box from '../index'
 export { default as Default } from './BoxDefault.story'
+export { default as Responsive } from './BoxResponsive.story'
 
 const spacingArgType = {
   control: {
@@ -45,19 +46,19 @@ export default {
   args: {
     backgroundColor: 'none',
     borderRadius: 'none',
-    margin: 'none',
-    marginBottom: 'none',
-    marginLeft: 'none',
-    marginRight: 'none',
-    marginTop: 'none',
-    marginX: 'none',
-    marginY: 'none',
-    padding: 'none',
-    paddingBottom: 'none',
-    paddingLeft: 'none',
-    paddingRight: 'none',
-    paddingTop: 'none',
-    paddingX: 'none',
-    paddingY: 'none',
+    margin: undefined,
+    marginBottom: undefined,
+    marginLeft: undefined,
+    marginRight: undefined,
+    marginTop: undefined,
+    marginX: undefined,
+    marginY: undefined,
+    padding: undefined,
+    paddingBottom: undefined,
+    paddingLeft: undefined,
+    paddingRight: undefined,
+    paddingTop: undefined,
+    paddingX: undefined,
+    paddingY: undefined,
   },
 }

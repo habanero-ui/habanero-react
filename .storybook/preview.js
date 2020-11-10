@@ -21,7 +21,7 @@ export const parameters = {
 }
 
 export const decorators = [
-  (storyFn) => <ThemeProvider theme={lightTheme}>{ storyFn() }</ThemeProvider>
+  (StoryFn) => <ThemeProvider theme={lightTheme}><StoryFn /></ThemeProvider>
 ]
 
 // export const decorators = [

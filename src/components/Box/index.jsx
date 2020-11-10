@@ -6,7 +6,6 @@ import styled from 'styled-components'
 
 import borderRadii from '../../constants/borderRadii'
 import colors from '../../constants/colors'
-import textVariants from '../../constants/textVariants'
 import getResponsivePropValue from '../../helpers/getResponsivePropValue'
 import useScreenSizeType from '../../helpers/useScreenSizeType'
 
@@ -41,7 +40,6 @@ Box.propTypes = {
   paddingX: spacingPropType,
   paddingY: spacingPropType,
   showInteractionOverlay: PropTypes.bool,
-  variant: PropTypes.oneOf(textVariants),
 }
 
 export default function Box(props) {
@@ -51,20 +49,20 @@ export default function Box(props) {
     children,
     className,
     component = 'div',
-    margin = 'none',
-    marginBottom = 'none',
-    marginLeft = 'none',
-    marginRight = 'none',
-    marginTop = 'none',
-    marginX = 'none',
-    marginY = 'none',
-    padding = 'none',
-    paddingBottom = 'none',
-    paddingLeft = 'none',
-    paddingRight = 'none',
-    paddingTop = 'none',
-    paddingX = 'none',
-    paddingY = 'none',
+    margin,
+    marginBottom,
+    marginLeft,
+    marginRight,
+    marginTop,
+    marginX,
+    marginY,
+    padding,
+    paddingBottom,
+    paddingLeft,
+    paddingRight,
+    paddingTop,
+    paddingX,
+    paddingY,
     style: styleProp = {},
     ...rest
   } = props
