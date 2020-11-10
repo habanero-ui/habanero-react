@@ -9,7 +9,7 @@ import textVariants from '../../constants/textVariants'
 const Root = styled.span((props) => ({
   color: props.colorIsBackground
     ? readableColor(
-        props.theme.colors[props.color],
+        props.theme.colors[props.color] || 'white',
         props.theme.colors.black,
         'white',
       )

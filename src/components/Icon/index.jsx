@@ -10,7 +10,7 @@ import iconSizes from '../../constants/iconSizes'
 const Root = styled.div((props) => ({
   color: props.colorIsBackground
     ? readableColor(
-        props.theme.colors[props.color],
+        props.theme.colors[props.color] || 'white',
         props.theme.colors.black,
         'white',
       )
