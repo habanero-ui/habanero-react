@@ -50,7 +50,10 @@ Columns.propTypes = {
   alignY: PropTypes.oneOf(verticalAlignments),
   collapseAbove: PropTypes.oneOf(breakpoints),
   collapseBelow: PropTypes.oneOf(breakpoints),
-  isReversed: PropTypes.bool,
+  isReversed: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.arrayOf(PropTypes.bool),
+  ]),
   space: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string,
@@ -95,7 +98,7 @@ export default function Columns(props) {
       align={align}
       alignY={alignY}
       isCollapsed={isCollapsed}
-      isReversed={getResponsivePropValue(isReversed)}
+      isReversed={getResponsivePropValue(isReversed, screenSizeType)}
       {...rest}
     >
       {React.Children.map(children, (child, index) => (
@@ -111,7 +114,7 @@ export default function Columns(props) {
             alignY={alignY}
             index={index}
             isCollapsed={isCollapsed}
-            isReversed={getResponsivePropValue(isReversed)}
+            isReversed={getResponsivePropValue(isReversed, screenSizeType)}
             space={space}
           >
             {child}
