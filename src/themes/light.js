@@ -1,4 +1,10 @@
 export default {
+  borderRadii: {
+    medium: '0.3125rem',
+    full: '9999px',
+    none: undefined,
+    small: '0.125rem',
+  },
   colors: {
     beige: '#F3F2E7',
     black: '#3E3B3E',
@@ -25,4 +31,4 @@ export default {
     xl: '1200px',
     xxl: '1440px',
   },
-};
+}

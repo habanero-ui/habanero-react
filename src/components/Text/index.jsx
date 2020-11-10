@@ -1,11 +1,10 @@
-import classnames from 'classnames';
-import { readableColor } from 'polished';
-import PropTypes from 'prop-types';
-import React from 'react';
-import styled from 'styled-components';
+import { readableColor } from 'polished'
+import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
 
-import colors from '../../constants/colors';
-import textVariants from '../../constants/textVariants';
+import colors from '../../constants/colors'
+import textVariants from '../../constants/textVariants'
 
 const Root = styled.span((props) => ({
   color: props.colorIsBackground
@@ -59,7 +58,7 @@ const Root = styled.span((props) => ({
     'label-small': '0.875rem',
   }[props.variant],
   transition: 'color 200ms ease',
-}));
+}))
 
 Text.propTypes = {
   className: PropTypes.string,
@@ -67,14 +66,14 @@ Text.propTypes = {
   colorIsBackground: PropTypes.bool,
   component: PropTypes.string,
   variant: PropTypes.oneOf(textVariants),
-};
+}
 
 export default function Text(props) {
-  const { children, className, component, ...rest } = props;
+  const { children, className, component, ...rest } = props
 
   return (
-    <Root as={component} className={classnames('text', className)} {...rest}>
+    <Root as={component} {...rest}>
       {children}
     </Root>
-  );
+  )
 }

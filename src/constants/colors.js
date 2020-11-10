@@ -14,4 +14,4 @@ export default [
   'subtle',
   'success',
   'warning',
-];
+]

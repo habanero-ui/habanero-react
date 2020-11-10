@@ -11,4 +11,4 @@ export default [
   'h6',
   'label-large',
   'label-small',
-];
+]

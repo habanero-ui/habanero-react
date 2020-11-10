@@ -1,5 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-import Text from '../index';
+import Text from '../index'
 
-export default ((args) => <Text {...args} />).bind({});
+export default ((args) => <Text {...args} />).bind({})
