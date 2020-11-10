@@ -10,6 +10,7 @@ export default {
     info: '#3C6EEA',
     offwhite: '#F8F9FA',
     orange: '#FCB68A',
+    none: undefined,
     pink: '#FAB5D3',
     purple: '#B6A4FF',
     subtle: '#7C7C86',

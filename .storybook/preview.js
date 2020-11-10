@@ -1,13 +1,15 @@
 // import GlobalStyles from '../src/components/GlobalStyles/index'
 import map from 'lodash/map'
-import theme from '../src/themes/light'
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import lightTheme from '../src/themes/light'
 import './index.css'
 
 export const parameters = {
   backgrounds: {
-    values: map(Object.keys(theme.colors), (name) => ({
+    values: map(Object.keys(lightTheme.colors), (name) => ({
       name,
-      value: theme.colors[name],
+      value: lightTheme.colors[name],
     })),
   },
   layout: 'centered',
@@ -17,6 +19,10 @@ export const parameters = {
     },
   },
 }
+
+export const decorators = [
+  (storyFn) => <ThemeProvider theme={lightTheme}>{ storyFn() }</ThemeProvider>
+]
 
 // export const decorators = [
 //   () => ({
