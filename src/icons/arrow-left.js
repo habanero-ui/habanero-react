@@ -1,0 +1,2 @@
+module.exports =
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" stroke="currentColor"><line data-cap="butt" data-color="color-2" fill="none" stroke-miterlimit="10" x1="22" y1="12" x2="2" y2="12" stroke-linecap="butt"/> <polyline fill="none" stroke="currentColor" stroke-miterlimit="10" points="9,19 2,12 9,5 "/></g></svg>'

@@ -61,7 +61,6 @@ const Root = styled.span((props) => ({
 }))
 
 Text.propTypes = {
-  className: PropTypes.string,
   color: PropTypes.oneOf(colors),
   colorIsBackground: PropTypes.bool,
   component: PropTypes.string,
@@ -69,11 +68,7 @@ Text.propTypes = {
 }
 
 export default function Text(props) {
-  const { children, className, component, ...rest } = props
+  const { component, ...rest } = props
 
-  return (
-    <Root as={component} {...rest}>
-      {children}
-    </Root>
-  )
+  return <Root as={component} {...rest} />
 }

@@ -1,0 +1,2 @@
+module.exports =
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" stroke="currentColor"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-miterlimit="10"/><circle data-color="color-2" data-stroke="none" cx="12" cy="18" r="1" stroke="none"/><path data-color="color-2" d="M9.853,6.56c1.98-.875,4.542-.771,5.417.645s.271,3.063-1.229,4.334S12,13.5,12,14.5" fill="none" stroke-miterlimit="10"/></g></svg>'
