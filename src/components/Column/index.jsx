@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import React from 'react'
 
 import columnWidths from '../../constants/columnWidths'
 
@@ -8,7 +7,7 @@ Column.propTypes = {
 }
 
 export default function Column(props) {
-  const { children, width, ...rest } = props
+  const { children } = props
 
-  return <div {...rest}>{children}</div>
+  return children
 }

@@ -60,7 +60,6 @@ const spacingPropType = PropTypes.oneOfType([
 Box.propTypes = {
   backgroundColor: PropTypes.oneOf(colors),
   borderRadius: PropTypes.oneOf(borderRadii),
-  className: PropTypes.string,
   component: PropTypes.string,
   margin: spacingPropType,
   marginBottom: spacingPropType,
@@ -84,7 +83,6 @@ export default function Box(props) {
     backgroundColor = 'none',
     borderRadius = 'none',
     children,
-    className,
     component = 'div',
     margin,
     marginBottom,
