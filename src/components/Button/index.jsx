@@ -5,7 +5,6 @@ import styled from 'styled-components'
 
 import buttonVariants from '../../constants/buttonVariants'
 import colors from '../../constants/colors'
-import columnWidths from '../../constants/columnWidths'
 import icons from '../../constants/icons'
 import iconSides from '../../constants/iconSides'
 import iconSizes from '../../constants/iconSizes'
@@ -112,7 +111,6 @@ Button.propTypes = {
   textVariant: PropTypes.oneOf(textVariants),
   type: PropTypes.string,
   variant: PropTypes.oneOf(buttonVariants),
-  width: PropTypes.oneOf(columnWidths),
 }
 
 Button.defaultProps = {
