@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import showIf from 'react-render-helpers/showIf'
 import styled from 'styled-components'
 
 import buttonVariants from '../../constants/buttonVariants'
@@ -10,6 +11,7 @@ import iconSides from '../../constants/iconSides'
 import iconSizes from '../../constants/iconSizes'
 import textVariants from '../../constants/textVariants'
 import Box from '../Box'
+import Icon from '../Icon'
 import Text from '../Text'
 
 const getBorderColor = ({ color, theme }) => {
@@ -36,7 +38,9 @@ const ButtonContent = styled(Box)((props) => ({
   borderRadius: '0.3rem',
   display: 'flex',
   flex: '1 1 0%',
+  flexDirection: props.iconSide === 'right' ? 'row' : 'row-reverse',
   justifyContent: 'center',
+  minWidth: props.text ? '8rem' : undefined,
   position: 'relative',
   '&::before': {
     border: '1px solid transparent',
@@ -63,6 +67,31 @@ const ButtonContent = styled(Box)((props) => ({
 const ButtonText = styled(Text)((props) => ({
   pointerEvents: props.disabled ? 'none' : undefined,
 }))
+
+const ButtonIcon = styled(Icon)((props) => {
+  const { spacing } = props.theme
+
+  const getMarginLeft = () => {
+    if (props.iconSide === 'left') {
+      return props.variant === 'text' ? undefined : spacing(-2)
+    }
+
+    return props.variant === 'text' ? spacing(2) : spacing(4)
+  }
+
+  const getMarginRight = () => {
+    if (props.iconSide === 'left') {
+      return props.variant === 'text' ? spacing(2) : spacing(4)
+    }
+
+    return props.variant === 'text' ? undefined : spacing(-2)
+  }
+
+  return {
+    marginLeft: getMarginLeft(),
+    marginRight: getMarginRight(),
+  }
+})
 
 Button.propTypes = {
   color: PropTypes.oneOf(colors),
@@ -93,54 +122,109 @@ export default function Button(props) {
   const {
     color,
     disabled,
+    iconName,
+    iconSize,
     isLoading,
     size,
     text,
     textVariant,
     variant,
-    ...rest
   } = props
 
-  const contentPaddingX = React.useMemo(() => (text ? 'gutter' : undefined), [
-    text,
-  ])
+  const contentMargin = React.useMemo(() => {
+    if (variant !== 'text') return
 
-  const contentPaddingY = React.useMemo(
-    () =>
-      ({
-        medium: 3.25,
-      }[size]),
-    [size],
-  )
+    if (!iconName) {
+      return '-xsmall'
+    }
+
+    return {
+      large: undefined,
+      medium: '-xxsmall',
+      small: '-xsmall',
+    }[iconSize]
+  }, [iconName, iconSize, variant])
+
+  const contentPaddingX = React.useMemo(() => {
+    if (variant !== 'text') {
+      return text ? 'gutter' : undefined
+    }
+
+    if (!iconName) {
+      return 'xsmall'
+    }
+
+    return {
+      large: undefined,
+      medium: 'xxsmall',
+      small: 'xsmall',
+    }[iconSize]
+  }, [iconName, iconSize, text, variant])
+
+  const contentPaddingY = React.useMemo(() => {
+    if (variant === 'text') {
+      if (!iconName) {
+        return 'xsmall'
+      }
+
+      return {
+        large: undefined,
+        medium: 'xxsmall',
+        small: 'xsmall',
+      }[iconSize]
+    }
+
+    if (iconName && size === 'small') {
+      return {
+        large: undefined,
+        medium: 0.75,
+        small: 1.75,
+      }[iconSize]
+    }
+
+    if (iconName && size === 'medium') {
+      return {
+        large: 1.25,
+        medium: 2.25,
+        small: 3.25,
+      }[iconSize]
+    }
+
+    return {
+      medium: 3.25,
+      small: 1.75,
+    }[size]
+  }, [iconName, iconSize, size, variant])
 
   return (
-    <Root
-      color={color}
-      disabled={disabled}
-      isLoading={isLoading}
-      size={size}
-      variant={variant}
-      {...rest}
-    >
+    <Root {...props}>
       <ButtonContent
+        {...props}
         backgroundColor={variant === 'primary' ? color : undefined}
-        color={color}
+        margin={contentMargin}
         paddingX={contentPaddingX}
         paddingY={contentPaddingY}
         showInteractionOverlay={!disabled}
-        variant={variant}
       >
-        {text ? (
+        {showIf(text)(
           <ButtonText
-            color={color}
+            {...props}
             colorIsBackground={variant === 'primary'}
-            disabled={disabled}
             style={{ visibility: isLoading ? 'hidden' : undefined }}
             variant={textVariant}
           >
             {text}
-          </ButtonText>
-        ) : null}
+          </ButtonText>,
+        )}
+        {showIf(iconName)(
+          <ButtonIcon
+            {...props}
+            colorIsBackground={variant === 'primary'}
+            name={iconName}
+            size={iconSize || size}
+            style={{ visibility: isLoading ? 'hidden' : undefined }}
+          />,
+        )}
       </ButtonContent>
     </Root>
   )

@@ -31,4 +31,7 @@ export default {
     xl: '1200px',
     xxl: '1440px',
   },
+  spacing(multiplier) {
+    return `${(multiplier * 4) / 16}rem`
+  },
 }

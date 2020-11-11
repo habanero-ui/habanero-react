@@ -1,5 +1,9 @@
 @import '../node_modules/flatpickr/dist/themes/light.css';
 
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-display: swap;
   font-family: 'Inter';
