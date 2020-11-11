@@ -12,6 +12,7 @@ import iconSizes from '../../constants/iconSizes'
 import textVariants from '../../constants/textVariants'
 import Box from '../Box'
 import Icon from '../Icon'
+import Spinner from '../Spinner'
 import Text from '../Text'
 
 const getBorderColor = ({ color, theme }) => {
@@ -66,6 +67,7 @@ const ButtonContent = styled(Box)((props) => ({
 
 const ButtonText = styled(Text)((props) => ({
   pointerEvents: props.disabled ? 'none' : undefined,
+  visibility: props.isLoading ? 'hidden' : undefined,
 }))
 
 const ButtonIcon = styled(Icon)((props) => {
@@ -90,7 +92,12 @@ const ButtonIcon = styled(Icon)((props) => {
   return {
     marginLeft: getMarginLeft(),
     marginRight: getMarginRight(),
+    visibility: props.isLoading ? 'hidden' : undefined,
   }
+})
+
+const ButtonSpinner = styled(Spinner)({
+  position: 'absolute',
 })
 
 Button.propTypes = {
@@ -210,7 +217,6 @@ export default function Button(props) {
           <ButtonText
             {...props}
             colorIsBackground={variant === 'primary'}
-            style={{ visibility: isLoading ? 'hidden' : undefined }}
             variant={textVariant}
           >
             {text}
@@ -222,7 +228,12 @@ export default function Button(props) {
             colorIsBackground={variant === 'primary'}
             name={iconName}
             size={iconSize || size}
-            style={{ visibility: isLoading ? 'hidden' : undefined }}
+          />,
+        )}
+        {showIf(isLoading)(
+          <ButtonSpinner
+            {...props}
+            colorIsBackground={variant === 'primary'}
           />,
         )}
       </ButtonContent>
