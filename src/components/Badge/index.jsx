@@ -38,7 +38,7 @@ export default function Badge(props) {
           variant="body-extra-small"
         >
           {text}
-        </BadgeText>
+        </BadgeText>,
       )}
     </Root>
   )
