@@ -12,6 +12,7 @@ const Root = styled.hr((props) => ({
     thin: 1,
   }[props.thickness],
   margin: 0,
+  width: '100%',
 }))
 
 Divider.propTypes = {

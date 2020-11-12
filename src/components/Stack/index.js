@@ -61,10 +61,7 @@ export default function Stack(props) {
                   paddingTop={index ? space : undefined}
                   style={{ alignSelf: 'stretch' }}
                 >
-                  <Divider
-                    style={{ width: '100%' }}
-                    thickness={dividerThicknesses}
-                  />
+                  <Divider thickness={dividerThicknesses} />
                 </Item>,
                 <Item align={align} paddingTop={index ? space : undefined}>
                   {child}
