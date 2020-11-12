@@ -1,15 +1,16 @@
 import React from 'react'
 
-import Box from '../../Box'
-import Button from '../../Button'
+import useScreenSizeType from '../../../helpers/useScreenSizeType'
 import Stack from '../index'
 
-export default ((args) => (
-  <Stack {...args}>
-    <Button text="Button 1" />
-    <Box backgroundColor="purple">Colored Box!</Box>
-    <Button text="Button 2" />
-    <span>Normal SPAN.</span>
-    <Button text="Button 3" />
-  </Stack>
-)).bind({})
+export default ((args) => {
+  const screenSizeType = useScreenSizeType()
+
+  return (
+    <Stack {...args} space={['xsmall', 'gutter', 'xlarge']}>
+      <div>Item 1 {screenSizeType}</div>
+      <div>Item 2 {screenSizeType}</div>
+      <div>Item 3 {screenSizeType}</div>
+    </Stack>
+  )
+}).bind({})
