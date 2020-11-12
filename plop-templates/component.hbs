@@ -1,9 +1,20 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import styled from 'styled-components'
+
+import colors from '../../constants/colors'
+
+const Root = styled.div((props) => ({
+  color: props.theme.colors[props.color],
+}))
 
 {{pascalCase name}}.propTypes = {
+  color: PropTypes.oneOf(colors),
+  text: PropTypes.string,
 }
 
 export default function {{pascalCase name}}(props) {
-  return <div {...props} />
+  const { text, ...rest } = props
+
+  return <Root {...rest}>{text}</Root>
 }

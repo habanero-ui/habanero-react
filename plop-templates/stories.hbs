@@ -1,7 +1,20 @@
+import colors from '../../../constants/colors'
 import {{pascalCase name}} from '../index'
 export { default as Default } from './{{pascalCase name}}Default.story'
 
 export default {
   title: 'Components/{{pascalCase name}}',
   component: {{pascalCase name}},
+  argTypes: {
+    color: {
+      control: {
+        type: 'select',
+        options: colors,
+      },
+    },
+  },
+  args: {
+    color: 'black',
+    text: 'Some Text',
+  },
 }
