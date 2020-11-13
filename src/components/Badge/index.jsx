@@ -1,15 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import showIf from 'react-render-helpers/showIf'
-import styled from 'styled-components'
 
 import colors from '../../constants/colors'
 import Box from '../Box'
 import Text from '../Text'
-
-const Root = styled(Box)((props) => ({}))
-
-const BadgeText = styled(Text)((props) => ({}))
 
 Badge.propTypes = {
   color: PropTypes.oneOf(colors),
@@ -24,7 +19,7 @@ export default function Badge(props) {
   const { color, text } = props
 
   return (
-    <Root
+    <Box
       {...props}
       backgroundColor={color}
       borderRadius="full"
@@ -32,14 +27,14 @@ export default function Badge(props) {
       paddingY="xxsmall"
     >
       {showIf(text)(
-        <BadgeText
+        <Text
           {...props}
           colorIsBackground={true}
           variant="body-extra-small"
         >
           {text}
-        </BadgeText>,
+        </Text>,
       )}
-    </Root>
+    </Box>
   )
 }
