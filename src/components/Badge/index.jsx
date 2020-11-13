@@ -27,11 +27,7 @@ export default function Badge(props) {
       paddingY="xxsmall"
     >
       {showIf(text)(
-        <Text
-          {...props}
-          colorIsBackground={true}
-          variant="body-extra-small"
-        >
+        <Text {...props} colorIsBackground={true} variant="body-extra-small">
           {text}
         </Text>,
       )}
