@@ -70,5 +70,10 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
   }
 }
