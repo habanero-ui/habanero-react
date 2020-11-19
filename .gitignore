@@ -126,3 +126,11 @@ yarn-error.log*
 
 # Storybook
 storybook-static
+
+# Build Output
+components
+constants
+helpers
+icons
+themes
+index.js
